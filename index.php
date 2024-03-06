@@ -1,11 +1,6 @@
-<?php
-//pega o ID do post da URL
-preg_match_all('/\d+\.\d+|\d+/', $_SERVER['REQUEST_URI'], $matches);
-if(!$matches[0])
-    exit();
-$subdomain_post_id = intval($matches[0][0]);
-$subdomain_mplay = isset($_GET['mplay']) ? $_GET['mplay'] : null;
-
-//insira o caminho root da index do wordpress
-include('C:/xampp/htdocs/wp/projeto/index.php');
-?>
+<?php 
+//Aqui você inserir a url completa do seu site para caso algém cair aqui ser direcionado para ele
+$site_url = null;//ex: 'https://mais18.dev.br/'
+if(isset($site_url)){
+    header("location: ". $site_url);
+}
